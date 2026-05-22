@@ -13,7 +13,9 @@ app.use(cors({
     "http://localhost:3001",
     "https://blogging-platform-eosin.vercel.app/"
   ],
-  credentials: true
+  credentials: true,
+  methods: ["GET", "POST", "PUT", "DELETE", "PATCH"],
+  allowedHeaders: ["Content-Type", "Authorization"]
 }));
 app.use(express.json());
 app.use(cookieParser());
