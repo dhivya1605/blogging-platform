@@ -4,8 +4,8 @@ const mongoose = require("mongoose");
 const cors = require("cors");
 const cookieParser = require("cookie-parser");
 
-const blogRoutes = require("./routes/BlogRoutes");
-const userRoutes = require("./routes/UserRoutes");
+const blogRoutes = require("./Routes/BlogRoutes");
+const userRoutes = require("./Routes/UserRoutes");
 const app = express()
  
 app.use(cors({
@@ -16,7 +16,7 @@ app.use(express.json());
 app.use(cookieParser());
 
 
-mongoose.connect("mongodb://localhost:27017/blogDB")
+mongoose.connect(process.env.MONGO_URI)
   .then(() => {
     console.log("MongoDB Connected");
   })
