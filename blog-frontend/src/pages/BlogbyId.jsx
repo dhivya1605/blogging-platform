@@ -47,7 +47,7 @@ const BlogbyId = () => {
   const handleLike = async () => {
     try {
       const res = await fetch(
-        ``${process.env.REACT_APP_API_URL}/api/blogs/${id}/like`,
+        `${process.env.REACT_APP_API_URL}/api/blogs/${id}/like`,
         {
           method: "PATCH",
           credentials: "include"
@@ -59,7 +59,7 @@ const BlogbyId = () => {
         return;
       }
 
-      const updated = await fetch(``${process.env.REACT_APP_API_URL}/api/blogs/${id}`);
+      const updated = await fetch(`${process.env.REACT_APP_API_URL}/api/blogs/${id}`);
       setBlog(await updated.json());
     } catch {
       alert("Error while liking");
@@ -69,7 +69,7 @@ const BlogbyId = () => {
  const handleSave = async () => {
   try {
     const res = await fetch(
-      ``${process.env.REACT_APP_API_URL}/api/users/save/${id}`,
+      `${process.env.REACT_APP_API_URL}/api/users/save/${id}`,
       {
         method: "POST",
         credentials: "include"
@@ -99,7 +99,7 @@ const BlogbyId = () => {
 
     try {
       const res = await fetch(
-        ``${process.env.REACT_APP_API_URL}/api/blogs/${id}/comment`,
+        `${process.env.REACT_APP_API_URL}/api/blogs/${id}/comment`,
         {
           method: "PATCH",
           headers: {
@@ -119,7 +119,7 @@ const BlogbyId = () => {
       setComment("");
 
      
-      const updated = await fetch(``${process.env.REACT_APP_API_URL}/api/blogs/${id}`);
+      const updated = await fetch(`${process.env.REACT_APP_API_URL}/api/blogs/${id}`);
       setBlog(await updated.json());
     } catch {
       alert("Error adding comment");
