@@ -9,7 +9,10 @@ const userRoutes = require("./Routes/UserRoutes");
 const app = express()
  
 app.use(cors({
-  origin: "http://localhost:3001", 
+  origin: [
+    "http://localhost:3001",
+    "https://blogging-platform-eosin.vercel.app"
+  ],
   credentials: true
 }));
 app.use(express.json());
