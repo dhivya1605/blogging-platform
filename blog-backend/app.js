@@ -11,7 +11,7 @@ const app = express()
 app.use(cors({
   origin: [
     "http://localhost:3001",
-    "https://blogging-platform-19hy9lq9w-dhivya1605s-projects.vercel.app/"
+    "https://blogging-platform-eosin.vercel.app/"
   ],
   credentials: true
 }));
